@@ -35,6 +35,7 @@ function findOneById(\PDO $connexion, int $id) {
 }
 
 function findAllBySearch(\PDO $connexion, string $search) {
+  $words = explode(' ', trim($search)); // explode() = fonction qui va "couper", séparer chaque mots du $search avec un espace entre et mettre chaque mots dans un tiroir différent du tableau $words, trim() pour enlever les espaces si il y en a avant ou apres les mots de la recherche
   $sql = "SELECT DISTINCT
                  p.id AS postId,
                  p.title AS postTitle,
@@ -45,13 +46,19 @@ function findAllBySearch(\PDO $connexion, string $search) {
           FROM posts p
           JOIN categories c ON p.categorie_id = c.id
           JOIN authors a ON p.author_id = a.id
-          WHERE p.title     LIKE :search
-             OR p.content   LIKE :search
-             OR c.name      LIKE :search
-             OR a.firstname LIKE :search
-             OR a.lastname  LIKE :search;";
+          WHERE 1 = 0";
+  for ($i=0; $i<count($words); $i++):
+    $sql .= " OR p.title     LIKE :word$i
+              OR p.content   LIKE :word$i
+              OR c.name      LIKE :word$i
+              OR a.firstname LIKE :word$i
+              OR a.lastname  LIKE :word$i ";
+  endfor;
+    $sql .= ";";
   $rs = $connexion->prepare($sql);
-  $rs->bindValue(':search', '%'.$search.'%', \PDO::PARAM_STR);
+  for ($i=0; $i<count($words); $i++):
+    $rs->bindValue(":word$i", '%'.$words[$i].'%', \PDO::PARAM_STR);
+  endfor;
   $rs->execute();
   return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }

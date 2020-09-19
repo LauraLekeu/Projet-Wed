@@ -7,7 +7,7 @@
 
 */
 ?>
-<h2> Résultats de la recherche : </h2>
+<h2> Résultats de la recherche : <small><?php echo $search; ?></small> </h2>
 <hr />
 <?php foreach ($posts as $post): ?>
   <article class="blog_item">
