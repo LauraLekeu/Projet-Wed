@@ -19,7 +19,7 @@
               </div>
               <div class="col-lg-4">
                   <div class="blog_right_sidebar">
-                      <?php  include_once '../app/vues/template/partials/aside.php'; ?>
+                      <?php  include_once '../app/vues/template/partials/_aside.php'; ?>
                   </div>
               </div>
           </div>

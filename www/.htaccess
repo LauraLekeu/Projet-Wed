@@ -13,13 +13,18 @@ RewriteEngine on
 # ROUTES
 #--------------------------------------------------
 
+# PAGE CONTACT
+# PATTERN: contact
+# URL : index.php?contact
+RewriteRule ^contact$ index.php?contact [L]
+
 # DETAIL D'UN POST
-# PATTERN: /posts/{id}-{slug}.html
+# PATTERN: posts/{id}-{slug}.html
 # URL : index.php?postId=x
 RewriteRule ^posts\/([1-9][0-9]*)-([a-z0-9][a-z0-9\-]*).html$ index.php?postId=$1 [L]
 
 # ROUTE DES POSTS
-# PATTERN: /posts
+# PATTERN: posts
 # URL : index.php
 RewriteRule ^posts$ index.php [L]
 
