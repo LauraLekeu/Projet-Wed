@@ -19,6 +19,6 @@ switch ($_GET['posts']):
   // PATTERN: /index.php?posts=search
   // CTRL: postsControleur
   // ACTION:  search
-      PostsControleur\searchAction($connexion, $_GET['search']);
+      PostsControleur\searchAction($connexion, $_POST['search']);
     break;
 endswitch;

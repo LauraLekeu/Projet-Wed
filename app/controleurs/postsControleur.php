@@ -31,3 +31,15 @@ function showAction(\PDO $connexion, int $id) {
   include '../app/vues/posts/show.php';
   $content = ob_get_clean();
 }
+
+function searchAction(\PDO $connexion, string $search) {
+  // Demander la liste des posts au modele
+  include_once '../app/modeles/postsModele.php';
+  $posts = PostsModele\findAllBySearch($connexion, $search);
+  // Charger la vue search dans $content
+  GLOBAL $content, $title;
+  $title = $search;
+  ob_start();
+  include '../app/vues/posts/search.php';
+  $content = ob_get_clean();
+}
