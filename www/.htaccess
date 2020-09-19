@@ -18,10 +18,18 @@ RewriteEngine on
 # URL : index.php?contact
 RewriteRule ^contact$ index.php?contact [L]
 
+
+# ROUTES DES POSTS --------------------------------
+
+# RECHERCHE D'UN POST
+# PATTERN: posts/search
+# URL : index.php?posts=search n
+RewriteRule ^posts\/search$ index.php?posts=search [L]
+
 # DETAIL D'UN POST
 # PATTERN: posts/{id}-{slug}.html
-# URL : index.php?postId=x
-RewriteRule ^posts\/([1-9][0-9]*)-([a-z0-9][a-z0-9\-]*).html$ index.php?postId=$1 [L]
+# URL : index.php?posts=show&id=x
+RewriteRule ^posts\/([1-9][0-9]*)-([a-z0-9][a-z0-9\-]*).html$ index.php?posts=show&id=$1 [L]
 
 # ROUTE DES POSTS
 # PATTERN: posts
