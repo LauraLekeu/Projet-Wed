@@ -17,7 +17,7 @@
     </div>
 
     <div class="blog_details">
-        <a class="d-inline-block" href="single-blog.html">
+        <a class="d-inline-block" href="posts/<?php echo $post['postId']; ?>-<?php echo \Noyau\Fonctions\slugify($post['postTitle']); ?>.html">
             <h2><?php echo $post['postTitle']; ?></h2>
         </a>
         <p><?php echo $post['postContent']; ?></p>

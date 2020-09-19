@@ -21,3 +21,15 @@ function findAll(\PDO $connexion) {
   $rs = $connexion->query($sql);
   return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
+
+function findOneById(\PDO $connexion, int $id) {
+  $sql = "SELECT *
+          FROM posts p
+          JOIN categories c ON p.categorie_id = c.id
+          JOIN authors a ON p.author_id = a.id
+          WHERE p.id = :id;";
+  $rs = $connexion->prepare($sql);
+  $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+  $rs->execute();
+  return $rs->fetch(\PDO::FETCH_ASSOC);
+}
