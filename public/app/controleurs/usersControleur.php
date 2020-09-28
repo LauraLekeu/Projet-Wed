@@ -9,6 +9,10 @@ namespace App\Controleurs\UsersControleur;
 use App\Modeles\UsersModele;
 
 function loginFormAction() {
+  // if (isset($_SESSION['user'])):
+  //   header('location:' . BASE_URL_ADMIN);
+  // endif;
+
   GLOBAL $content, $title;
   $title = TITRE_LOGIN;
   ob_start();
