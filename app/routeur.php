@@ -5,9 +5,8 @@
 
 */
 
-
-if (isset($_GET['contact'])):
 // ROUTE PAGE CONTACT
+if (isset($_GET['contact'])):
   // PATTERN: /contact.html
   // CTRL: -
   // ACTION:  -
@@ -17,10 +16,13 @@ if (isset($_GET['contact'])):
   $content = ob_get_clean();
 
 
-
-elseif (isset($_GET['posts'])):
 // ROUTES DES POSTS
+elseif (isset($_GET['posts'])):
   include_once '../app/routeurs/postsRouteur.php';
+
+// ROUTES DES USERS
+elseif (isset($_GET['users'])):
+  include_once '../app/routeurs/usersRouteur.php';
 
 
 else:

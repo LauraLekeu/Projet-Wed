@@ -18,6 +18,16 @@ RewriteEngine on
 # URL : index.php?contact
 RewriteRule ^contact$ index.php?contact [L]
 
+# FORMULAIRE DE CONNEXION AU BACKOFFICE
+# PATTERN: users/login
+# URL : index.php?users=login
+RewriteRule ^users\/loginForm$ index.php?users=loginForm [L]
+
+# TRAITEMENT DU FORMULAIRE DE CONNEXION AU BACKOFFICE
+# PATTERN: users/login/submit
+# URL : index.php?users=loginCheck
+RewriteRule ^users\/login\/submit$ index.php?users=loginCheck [L]
+
 
 # ROUTES DES POSTS --------------------------------
 
