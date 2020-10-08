@@ -16,6 +16,4 @@ $content = '';
 $title = '';
 
 // Textes
-define('TITRE_POST_INDEX', "Home");
-define('TITRE_CONTACT', "Contact");
-define('TITRE_LOGIN', "Login");
+define('TITRE_USERS_DASHBOARD', "Dashboard");

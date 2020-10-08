@@ -1,7 +1,8 @@
 <?php
 /*
 
-    ./www/noyau/protect.php
+    ./www/noyau/protection.php
+    Redirection en cas d'acces direct au backoffice
 
 */
 
