@@ -16,3 +16,11 @@ function dashboardAction(\PDO $connexion) {
     include '../app/vues/users/dashboard.php';
   $content = ob_get_clean();
 }
+
+
+function logoutAction() {
+  // Tuer la variable de session 'user'
+  unset($_SESSION['user']);
+  // Rediriger vers le site public
+  header('location: ' . BASE_URL_PUBLIC);
+}
