@@ -13,12 +13,20 @@ RewriteEngine on
 # ROUTES
 #--------------------------------------------------
 
+# ROUTES DES CATEGORIES ---------------------------
+
+  # LISTE DES CATEGORIES
+  # PATTERN : categories
+  # URL : index.php?categories=index
+  RewriteRule ^categories$ index.php?categories=index [L]
+
+
 # ROUTES DES USERS --------------------------------
 
-# LOGOUT
-# PATTERN : users/logout
-# URL: index.php?users=logout
-RewriteRule ^users\/logout$ index.php?users=logout [L]
+  # LOGOUT
+  # PATTERN : users/logout
+  # URL: index.php?users=logout
+  RewriteRule ^users\/logout$ index.php?users=logout [L]
 
 #--------------------------------------------------
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]

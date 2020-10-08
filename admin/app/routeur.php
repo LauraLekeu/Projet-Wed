@@ -6,9 +6,13 @@
 */
 
 // ROUTES DES USERS
-if (isset($_GET['users'])):
-  include_once '../app/routeurs/usersRouteur.php';
+if (isset($_GET['categories'])):
+  include_once '../app/routeurs/categoriesRouteur.php';
 
+
+// ROUTES DES USERS
+elseif (isset($_GET['users'])):
+  include_once '../app/routeurs/usersRouteur.php';
 
 // ROUTE PAR DEFAUT
 else:

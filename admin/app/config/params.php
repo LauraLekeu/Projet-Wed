@@ -17,3 +17,4 @@ $title = '';
 
 // Textes
 define('TITRE_USERS_DASHBOARD', "Dashboard");
+define('TITRE_CATEGORIES_INDEX', "Liste des catégories");
