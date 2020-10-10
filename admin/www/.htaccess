@@ -20,6 +20,16 @@ RewriteEngine on
   # URL : index.php?categories=index
   RewriteRule ^categories$ index.php?categories=index [L]
 
+  # AJOUT CATEGORIE : FORMULAIRE
+  # PATTERN : categories/add/form
+  # URL : index.php?categories=addForm
+  RewriteRule ^categories\/add\/form$ index.php?categories=addForm [L]
+
+  # AJOUT CATEGORIE : INSERT
+  # PATTERN : categories/add/insert
+  # URL : index.php?categories=add
+  RewriteRule ^categories\/add\/insert$ index.php?categories=add [L]
+
 
 # ROUTES DES USERS --------------------------------
 
