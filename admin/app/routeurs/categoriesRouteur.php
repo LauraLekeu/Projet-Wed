@@ -33,4 +33,11 @@ switch ($_GET['categories']):
        'name' => $_POST['name']
      ]);
     break;
+  case 'delete':
+    // SUPPRESSION CATEGORIE : DELETE
+    // PATTERN : index.php?categories=delete&id=x
+    // CTRL : categoriesControleur
+    // ACTION : delete
+    CategoriesControleur\deleteAction($connexion, $_GET['id']);
+    break;
 endswitch;

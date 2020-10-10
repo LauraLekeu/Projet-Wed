@@ -36,3 +36,11 @@ function addAction(\PDO $connexion, array $data = null) {
   // Rediriger vers la liste des catégories
   header('location: ' . BASE_URL_ADMIN . 'categories');
 }
+
+function deleteAction(\PDO $connexion, int $id) {
+  // Demander au modèle de supprimer la categorie
+  include_once '../app/modeles/categoriesModele.php';
+  $return = CategoriesModele\delete($connexion, $id); // $return = un boolean (true ou false)
+  // Rediriger vers la liste des catégories
+  header('location: ' . BASE_URL_ADMIN . 'categories');
+}

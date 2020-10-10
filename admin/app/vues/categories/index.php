@@ -35,8 +35,8 @@
         <td><?php echo $categorie['name']; ?></td>
         <td><?php echo $categorie['created_at']; ?></td>
         <td>
-          <a href="#">Edit</a> |
-          <a href="#">Delete</a>
+          <a href="categories/show/<?php echo $categorie['id']; ?>" class="edit " >Edit</a> |
+          <a href="categories/delete/<?php echo $categorie['id']; ?>" class="delete" >Delete</a>
         </td>
       </tr>
     <?php endforeach; ?>
