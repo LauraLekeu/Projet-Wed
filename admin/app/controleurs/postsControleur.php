@@ -52,3 +52,13 @@ function addAction(\PDO $connexion) {
   // // Rediriger vers la liste des posts
   header('location: ' . BASE_URL_ADMIN . 'posts');
 }
+
+function deleteAction(\PDO $connexion, int $id) {
+  // Demander au modèle de supprimer les liaisons N-M correspondantes
+  include_once '../app/modeles/postsModele.php';
+  $return1 = PostsModele\deletePostsHasTagsByPostId($connexion, $id);
+  // Demander au modèle de supprimer le post
+  $return = PostsModele\deleteOneById($connexion, $id);
+  // Rediriger vers la liste des posts
+  header('location: ' . BASE_URL_ADMIN . 'posts');
+}

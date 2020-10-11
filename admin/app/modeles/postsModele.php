@@ -42,10 +42,26 @@ function insertOne(\PDO $connexion, array $data) :int { // :int car il va renvoy
 
 function insertTagById(\PDO $connexion, array $data) {
   $sql = "INSERT INTO posts_has_tags
-          SET post_id = :post,
-              tag_id  = :tag;";
+          SET post_id = :postId,
+              tag_id  = :tagId;";
   $rs = $connexion->prepare($sql);
-  $rs->bindValue(':post', $data['postId'], \PDO::PARAM_INT);
-  $rs->bindValue(':tag', $data['tagId'], \PDO::PARAM_INT);
+  $rs->bindValue(':postId', $data['postId'], \PDO::PARAM_INT);
+  $rs->bindValue(':tagId', $data['tagId'], \PDO::PARAM_INT);
+  return $rs->execute();
+}
+
+function deletePostsHasTagsByPostId(\PDO $connexion, int $postId) :bool {
+  $sql = "DELETE FROM posts_has_tags
+          WHERE post_id = :postId;";
+  $rs = $connexion->prepare($sql);
+  $rs->bindValue(':postId', $postId, \PDO::PARAM_INT);
+  return $rs->execute();
+}
+
+function deleteOneById(\PDO $connexion, int $id) :bool {
+  $sql = "DELETE FROM posts
+          WHERE id = :id;";
+  $rs = $connexion->prepare($sql);
+  $rs->bindValue(':id', $id, \PDO::PARAM_INT);
   return $rs->execute();
 }

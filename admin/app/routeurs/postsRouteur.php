@@ -24,6 +24,13 @@ switch ($_GET['posts']):
     // ACTION : add
     PostsControleur\addAction($connexion);
     break;
+  case 'delete':
+    // AJOUT POST : DELETE
+    // PATTERN : index.php?posts=add
+    // CTRL : postsControleur
+    // ACTION : delete
+    PostsControleur\deleteAction($connexion, $_GET['id']);
+    break;
   default:
    // LISTE DES POSTS
    // PATTERN: index.php?posts
