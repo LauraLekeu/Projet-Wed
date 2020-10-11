@@ -44,3 +44,23 @@ function deleteAction(\PDO $connexion, int $id) {
   // Rediriger vers la liste des catégories
   header('location: ' . BASE_URL_ADMIN . 'categories');
 }
+
+function editFormAction(\PDO $connexion, int $id) {
+  // Demander au modèle de modifier la categorie
+  include_once '../app/modeles/categoriesModele.php';
+  $categorie  = CategoriesModele\findOneById($connexion, $id); // $return = un boolean (true ou false)
+  // Charger la vue editForm dans $content
+  GLOBAL $content, $title;
+  $title = TITRE_CATEGORIES_EDITFORM;
+  ob_start();
+    include '../app/vues/categories/editForm.php';
+  $content = ob_get_clean();
+}
+
+function editAction(\PDO $connexion, array $data = null) {
+  // Demander au modèle d'updater la categorie
+  include_once '../app/modeles/categoriesModele.php';
+  $return = CategoriesModele\update($connexion, $data); // $return = un boolean (true ou false)
+  // Rediriger vers la liste des catégories
+  header('location: ' . BASE_URL_ADMIN . 'categories');
+}
