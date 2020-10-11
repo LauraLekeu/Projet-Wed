@@ -65,3 +65,23 @@ function deleteOneById(\PDO $connexion, int $id) :bool {
   $rs->bindValue(':id', $id, \PDO::PARAM_INT);
   return $rs->execute();
 }
+
+function findOneById(\PDO $connexion, int $id) :array {
+  $sql = "SELECT *
+          FROM posts
+          WHERE id = :id;";
+  $rs = $connexion->prepare($sql);
+  $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+  $rs->execute();
+  return $rs->fetch(\PDO::FETCH_ASSOC);
+}
+
+function findTagByPostId(\PDO $connexion, int $postId) :array {
+  $sql = "SELECT tag_id
+          FROM posts_has_tags
+          WHERE post_id = :postId;";
+  $rs = $connexion->prepare($sql);
+  $rs->bindValue(':postId', $postId, \PDO::PARAM_INT);
+  $rs->execute();
+  return $rs->fetchAll(\PDO::FETCH_COLUMN); 
+}

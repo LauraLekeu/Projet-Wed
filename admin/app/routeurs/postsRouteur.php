@@ -31,6 +31,13 @@ switch ($_GET['posts']):
     // ACTION : delete
     PostsControleur\deleteAction($connexion, $_GET['id']);
     break;
+  case 'editForm':
+    // MODIFICATION POST : FORMULAIRE
+    // PATTERN : index.php?posts=editForm&id=x
+    // CTRL : postsControleur
+    // ACTION : editForm
+    PostsControleur\editFormAction($connexion, $_GET['id']);
+    break;
   default:
    // LISTE DES POSTS
    // PATTERN: index.php?posts

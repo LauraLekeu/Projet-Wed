@@ -62,3 +62,30 @@ function deleteAction(\PDO $connexion, int $id) {
   // Rediriger vers la liste des posts
   header('location: ' . BASE_URL_ADMIN . 'posts');
 }
+
+function editFormAction(\PDO $connexion, int $id) {
+  // Demander au modèle le post à modifier dans le formulaire
+  include_once '../app/modeles/postsModele.php';
+  $post = PostsModele\findOneById($connexion, $id);
+  // Demander au modèle les tags du post affiché dans le formulaire
+  include_once '../app/modeles/postsModele.php';
+  $postTags = PostsModele\findTagByPostId($connexion, $id);
+
+
+  // Demander les auteurs au modèle
+  include_once '../app/modeles/auteursModele.php';
+  $auteurs = \App\Modeles\AuteursModele\findAll($connexion);
+  // Demander les catégories au modèle
+  include_once '../app/modeles/categoriesModele.php';
+  $categories = \App\Modeles\CategoriesModele\findAll($connexion);
+  // Demander les tags au modèle
+  include_once '../app/modeles/tagsModele.php';
+  $tags = \App\Modeles\TagsModele\findAll($connexion);
+
+  // Charger la vue editForm dans $content
+  GLOBAL $content, $title;
+  $title = TITRE_POSTS_EDITFORM;
+  ob_start();
+   include '../app/vues/posts/editForm.php';
+  $content = ob_get_clean();
+}

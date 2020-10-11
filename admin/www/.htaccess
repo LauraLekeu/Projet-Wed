@@ -35,6 +35,10 @@ RewriteEngine on
   # URL : index.php?posts=delete&id=x
   RewriteRule ^posts\/delete\/([1-9][0-9]*)$ index.php?posts=delete&id=$1 [L]
 
+  # MODIFICATION POST : FORMULAIRE
+  # PATTERN : posts/edit/form/x
+  # URL : index.php?posts=editForm&id=x
+  RewriteRule ^posts\/edit\/form\/([1-9][0-9]*)$ index.php?posts=editForm&id=$1 [L] 
 
 
 # ROUTES DES CATEGORIES ---------------------------
@@ -63,7 +67,6 @@ RewriteEngine on
   # PATTERN : categories/edit/form/x
   # URL : index.php?categories=editForm&id=x
   RewriteRule ^categories\/edit\/form\/([1-9][0-9]*)$ index.php?categories=editForm&id=$1 [L]
-
 
   # MODIFICATION CATEGORIE : UPDATE
   # PATTERN : categories/edit/x

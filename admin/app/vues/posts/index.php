@@ -43,7 +43,7 @@
         <td><?php echo $post['categorieName']; ?></td>
         <td><?php echo $post['authorFirstName']; ?> <?php echo $post['authorLastName']; ?></td>
         <td>
-          <a href="posts/edit/form/<?php echo $post['id']; ?>">Edit</a> |
+          <a href="posts/edit/form/<?php echo $post['postId']; ?>">Edit</a> |
           <a href="posts/delete/<?php echo $post['postId']; ?>" class="delete">Delete</a>
         </td>
       </tr>
