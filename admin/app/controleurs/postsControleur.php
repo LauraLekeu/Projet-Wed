@@ -1,7 +1,7 @@
 <?php
 /*
 
-    ./app/controleurs/categoriesControleurs.php
+    ./app/controleurs/postsControleurs.php
 
 */
 
@@ -17,5 +17,26 @@ function indexAction(\PDO $connexion) {
   $title = TITRE_POSTS_INDEX;
   ob_start();
     include '../app/vues/posts/index.php';
+  $content = ob_get_clean();
+}
+
+function addFormAction(\PDO $connexion) {
+  // Demander les auteurs au modèle
+  include_once '../app/modeles/auteursModele.php';
+  $auteurs = \App\Modeles\AuteursModele\findAll($connexion);
+
+  // Demander les catégories au modèle
+  include_once '../app/modeles/categoriesModele.php';
+  $categories = \App\Modeles\CategoriesModele\findAll($connexion);
+
+  // Demander les tags au modèle
+  include_once '../app/modeles/tagsModele.php';
+  $tags = \App\Modeles\TagsModele\findAll($connexion);
+
+  // Charger la vue addForm dans $content
+  GLOBAL $content, $title;
+  $title = TITRE_POSTS_ADDFORM;
+  ob_start();
+    include '../app/vues/posts/addForm.php';
   $content = ob_get_clean();
 }
