@@ -64,7 +64,7 @@
   <div class="form-group row">
     <div class="col-sm-8">
       <?php foreach ($tags as $tag): ?>
-         <input type="checkbox" name="<?php echo $tag['name']; ?>" id="<?php echo $tag['name']; ?>">
+         <input type="checkbox" name="tags[]" value="<?php echo $tag['id']; ?>" id="<?php echo $tag['name']; ?>"> <!-- categorie[] pour récuper TOUS les id des tags sélectionnés -->
          <label for="<?php echo $tag['name']; ?>"> <?php echo $tag['name']; ?> </label>
       <?php endforeach; ?>
     </div>

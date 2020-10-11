@@ -17,6 +17,13 @@ switch ($_GET['posts']):
     // ACTION : addForm
     PostsControleur\addFormAction($connexion);
     break;
+  case 'add':
+    // AJOUT POST : INSERT
+    // PATTERN : index.php?posts=add
+    // CTRL : postsControleur
+    // ACTION : add
+    PostsControleur\addAction($connexion);
+    break;
   default:
    // LISTE DES POSTS
    // PATTERN: index.php?posts

@@ -25,6 +25,11 @@ RewriteEngine on
   # URL : index.php?posts=addForm
   RewriteRule ^posts\/add\/form$ index.php?posts=addForm [L]
 
+  # AJOUT POST : INSERT
+  # PATTERN : posts/add/insert
+  # URL : index.php?posts=add
+  RewriteRule ^posts\/add\/insert$ index.php?posts=add [L]
+
 
 
 # ROUTES DES CATEGORIES ---------------------------
