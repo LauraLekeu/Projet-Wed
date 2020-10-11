@@ -19,5 +19,7 @@ $title = '';
 define('TITRE_USERS_DASHBOARD', "Dashboard");
 
 define('TITRE_CATEGORIES_INDEX', "Liste des catégories");
-define('TITRE_CATEGORIES_ADDFORM', "Ajout d'une catégorie ");
-define('TITRE_CATEGORIES_EDITFORM', "Modification d'une catégorie ");
+define('TITRE_CATEGORIES_ADDFORM', "Ajout d'une catégorie");
+define('TITRE_CATEGORIES_EDITFORM', "Modification d'une catégorie");
+
+define('TITRE_POSTS_INDEX', "Liste des posts");

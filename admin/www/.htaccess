@@ -13,6 +13,14 @@ RewriteEngine on
 # ROUTES
 #--------------------------------------------------
 
+# ROUTES DES POSTS --------------------------------
+
+  # LISTE DES POSTS
+  # PATTERN : posts
+  # URL : index.php?posts
+  RewriteRule ^posts$ index.php?posts [L]
+
+
 # ROUTES DES CATEGORIES ---------------------------
 
   # LISTE DES CATEGORIES
