@@ -83,5 +83,22 @@ function findTagByPostId(\PDO $connexion, int $postId) :array {
   $rs = $connexion->prepare($sql);
   $rs->bindValue(':postId', $postId, \PDO::PARAM_INT);
   $rs->execute();
-  return $rs->fetchAll(\PDO::FETCH_COLUMN); 
+  return $rs->fetchAll(\PDO::FETCH_COLUMN);
+}
+
+function updateOneById(\PDO $connexion, int $id, array $data) :bool {
+  $sql = "UPDATE  posts
+          SET title        = :title,
+              content      = :content,
+              categorie_id = :categorieId,
+              author_id    = :authorId,
+              created_at   = NOW()
+          WHERE id = :id;";
+  $rs = $connexion->prepare($sql);
+  $rs->bindValue(':title', $data['title'], \PDO::PARAM_STR);
+  $rs->bindValue(':content', $data['content'], \PDO::PARAM_STR);
+  $rs->bindValue(':categorieId', $data['categorie'], \PDO::PARAM_INT);
+  $rs->bindValue(':authorId', $data['auteur'], \PDO::PARAM_INT);
+  $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+  return $rs->execute();
 }

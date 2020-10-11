@@ -18,7 +18,7 @@
   <a href="posts">Retour vers la liste des posts</a>
 </div>
 <br />
-<form action="posts/edit/<?php echo $categorie['id']; ?>" method="post">
+<form action="posts/edit/<?php echo $post['id']; ?>" method="post">
 
   <div class="form-group row">
     <label for="title" class="col-sm-2 col-form-label">Nom du post</label>
@@ -72,5 +72,5 @@
     </div>
   </div>
 
-  <input type="submit" value="Ajouter">
+  <input type="submit" value="Modifier">
 </form>

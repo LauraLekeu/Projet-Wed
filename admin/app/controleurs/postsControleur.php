@@ -89,3 +89,22 @@ function editFormAction(\PDO $connexion, int $id) {
    include '../app/vues/posts/editForm.php';
   $content = ob_get_clean();
 }
+
+
+function editUpdateAction(\PDO $connexion, int $id) {
+  // Demander au modèle de supprimer les tags correspondants
+  include_once '../app/modeles/postsModele.php';
+  $return1 = PostsModele\deletePostsHasTagsByPostId($connexion, $id);
+
+  // Demander au modèle de modifier le post
+  $return2 = PostsModele\updateOneById($connexion, $id, $_POST);
+  // Demander au modèle d'ajouter les tags correpondants
+  foreach ($_POST['tags'] as $tagId) {
+  $return = PostsModele\insertTagById($connexion, [
+     'postId' => $id,
+     'tagId'  => $tagId
+   ]);
+  }
+  // Rediriger vers la liste des posts
+  header('location: ' . BASE_URL_ADMIN . 'posts');
+}
