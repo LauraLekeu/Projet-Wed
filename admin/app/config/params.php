@@ -25,3 +25,8 @@ define('TITRE_CATEGORIES_EDITFORM', "Modification d'une catégorie");
 define('TITRE_POSTS_INDEX', "Liste des posts");
 define('TITRE_POSTS_ADDFORM', "Ajout d'un post");
 define('TITRE_POSTS_EDITFORM', "Modification d'un post");
+
+
+define('TITRE_AUTEURS_INDEX', "Liste des auteurs");
+define('TITRE_AUTEURS_ADDFORM', "Ajout d'un auteur");
+define('TITRE_AUTEURS_EDITFORM', "Modification d'un auteur");

@@ -45,6 +45,38 @@ RewriteEngine on
   # URL : index.php?posts=edit&id=x
   RewriteRule ^posts\/edit\/([1-9][0-9]*)$ index.php?posts=edit&id=$1 [L]
 
+# ROUTES DES AUTEUR ---------------------------
+
+  # LISTE DES AUTEURS
+  # PATTERN : auteurs
+  # URL : index.php?auteurs=index
+  RewriteRule ^auteurs$ index.php?auteurs=index [L]
+
+  # AJOUT AUTEUR : FORMULAIRE
+  # PATTERN : auteurs/add/form
+  # URL : index.php?auteurs=addForm
+  RewriteRule ^auteurs\/add\/form$ index.php?auteurs=addForm [L]
+
+  # AJOUT AUTEUR : INSERT
+  # PATTERN : auteurs/add/insert
+  # URL : index.php?auteurs=add
+  RewriteRule ^auteurs\/add\/insert$ index.php?auteurs=add [L]
+
+  # SUPPRESSION AUTEUR : DELETE
+  # PATTERN : auteurs/delete/x
+  # URL : index.php?auteurs=delete&id=x
+  RewriteRule ^auteurs\/delete\/([1-9][0-9]*)$ index.php?auteurs=delete&id=$1 [L]
+
+  # MODIFICATION AUTEUR : FORMULAIRE
+  # PATTERN : auteurs/edit/form/x
+  # URL : index.php?auteurs=editForm&id=x
+  RewriteRule ^auteurs\/edit\/form\/([1-9][0-9]*)$ index.php?auteurs=editForm&id=$1 [L]
+
+  # MODIFICATION AUTEUR : UPDATE
+  # PATTERN : auteurs/edit/x
+  # URL : index.php?auteurs=edit&id=x
+  RewriteRule ^auteurs\/edit\/([1-9][0-9]*)$ index.php?auteurs=edit&id=$1 [L]
+
 
 # ROUTES DES CATEGORIES ---------------------------
 

@@ -30,8 +30,8 @@
             <li><a href="#">Ajouter un tag</a></li>
             <li role="separator" class="divider"></li>
             <li class="dropdown-header">Authors</li>
-            <li><a href="#">Liste des authors</a></li>
-            <li><a href="#">Ajouter un author</a></li>
+            <li><a href="auteurs">Liste des authors</a></li>
+            <li><a href="auteurs/add/form">Ajouter un author</a></li>
             <li role="separator" class="divider"></li>
             <li class="dropdown-header">Posts</li>
             <li><a href="posts">Liste des posts</a></li>
