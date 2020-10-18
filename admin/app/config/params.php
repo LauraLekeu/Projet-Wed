@@ -26,7 +26,10 @@ define('TITRE_POSTS_INDEX', "Liste des posts");
 define('TITRE_POSTS_ADDFORM', "Ajout d'un post");
 define('TITRE_POSTS_EDITFORM', "Modification d'un post");
 
-
 define('TITRE_AUTEURS_INDEX', "Liste des auteurs");
 define('TITRE_AUTEURS_ADDFORM', "Ajout d'un auteur");
 define('TITRE_AUTEURS_EDITFORM', "Modification d'un auteur");
+
+define('TITRE_TAGS_INDEX', "Liste des tags");
+define('TITRE_TAGS_ADDFORM', "Ajout d'un tag");
+define('TITRE_TAGS_EDITFORM', "Modification d'un tag");

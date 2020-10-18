@@ -26,8 +26,8 @@
             <li><a href="categories/add/form">Ajouter une catégorie</a></li>
             <li role="separator" class="divider"></li>
             <li class="dropdown-header">Tags</li>
-            <li><a href="#">Liste des tags</a></li>
-            <li><a href="#">Ajouter un tag</a></li>
+            <li><a href="tags">Liste des tags</a></li>
+            <li><a href="tags/add/form">Ajouter un tag</a></li>
             <li role="separator" class="divider"></li>
             <li class="dropdown-header">Authors</li>
             <li><a href="auteurs">Liste des authors</a></li>

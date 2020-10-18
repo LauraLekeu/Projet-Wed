@@ -9,6 +9,10 @@
 if (isset($_GET['posts'])):
   include_once '../app/routeurs/postsRouteur.php';
 
+// ROUTES DES TAGS
+elseif (isset($_GET['tags'])):
+  include_once '../app/routeurs/tagsRouteur.php';
+
 // ROUTES DES CATEGORIES
 elseif (isset($_GET['auteurs'])):
   include_once '../app/routeurs/auteursRouteur.php';

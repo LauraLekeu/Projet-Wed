@@ -45,6 +45,40 @@ RewriteEngine on
   # URL : index.php?posts=edit&id=x
   RewriteRule ^posts\/edit\/([1-9][0-9]*)$ index.php?posts=edit&id=$1 [L]
 
+
+  # ROUTES DES TAGS ---------------------------
+
+  # LISTE DES TAGS
+  # PATTERN : tags
+  # URL : index.php?tags=index
+  RewriteRule ^tags$ index.php?tags=index [L]
+
+  # AJOUT TAG : FORMULAIRE
+  # PATTERN : tags/add/form
+  # URL : index.php?tags=addForm
+  RewriteRule ^tags\/add\/form$ index.php?tags=addForm [L]
+
+  # AJOUT TAG : INSERT
+  # PATTERN : tags/add/insert
+  # URL : index.php?tags=add
+  RewriteRule ^tags\/add\/insert$ index.php?tags=add [L]
+
+  # SUPPRIMER TAG : DELETE
+  # PATTERN : tags/delete/x
+  # URL : index.php?tags=delete&id=x
+  RewriteRule ^tags\/delete\/([1-9][0-9]*)$ index.php?tags=delete&id=$1 [L]
+
+  # MODIFICATION TAG : FORMULAIRE
+  # PATTERN : tags/edit/form/x
+  # URL : index.php?tags=editForm&id=x
+  RewriteRule ^tags\/edit\/form\/([1-9][0-9]*)$ index.php?tags=editForm&id=$1 [L]
+
+  # MODIFICATION TAG : UPDATE
+  # PATTERN : tags/edit/x
+  # URL : index.php?tags=edit&id=x
+  RewriteRule ^tags\/edit\/([1-9][0-9]*)$ index.php?tags=edit&id=$1 [L]
+
+
 # ROUTES DES AUTEUR ---------------------------
 
   # LISTE DES AUTEURS
